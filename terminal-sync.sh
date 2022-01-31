@@ -42,6 +42,7 @@ rm $PWD/.terminal-sync-tmp.sh
 AskQuestion "Do you want to install Homebrew" "Installing Homebrew"
 if [[ "$?" == 1 ]]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  brew tap homebrew/cask-versions
 fi
 
 AskQuestion "Do you want to install iTerm2 (This requires Homebrew to be installed)" "Installing iTerm2"
