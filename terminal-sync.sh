@@ -45,6 +45,41 @@ if [[ "$?" == 1 ]]; then
   brew tap homebrew/cask-versions
 fi
 
+AskQuestion "Do you want to install NodeJS" "Installing NodeJS"
+if [[ "$?" == 1 ]]; then
+  brew install node
+fi
+
+AskQuestion "Do you want to install Yarn" "Installing Yarn"
+if [[ "$?" == 1 ]]; then
+  brew install yarn
+fi
+
+AskQuestion "Do you want to install NVM" "Installing NVM"
+if [[ "$?" == 1 ]]; then
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+fi
+
+AskQuestion "Do you want to install npmrc-cli" "Installing npmrc-cli"
+if [[ "$?" == 1 ]]; then
+  yarn global add npmrc-cli
+fi
+
+AskQuestion "Do you want to install Terminal Fonts"
+if [[ "$?" == 1 ]]; then
+  echo "brew tap homebrew/cask-fonts"
+  brew update --force --verbose
+  brew tap homebrew/cask-fonts
+  echo "Installing font Meslo..."
+  brew install --cask font-meslo-lg
+  brew install --cask font-meslo-for-powerline
+  echo "Installing font Hack-Nerd..."
+  brew install --cask font-hack-nerd-font
+  echo "Installing font Fira-Code..."
+  brew install --cask font-fira-code-nerd-font
+  brew install --cask font-fira-code
+fi
+
 AskQuestion "Do you want to install iTerm2 (This requires Homebrew to be installed)" "Installing iTerm2"
 if [[ "$?" == 1 ]]; then
   brew cask install iterm2
@@ -77,26 +112,6 @@ if [[ "$?" == 1 ]]; then
   if [[ "$?" == 1 ]]; then
     /bin/bash -c "$(curl -fsSL $zshpluginsurl)"
   fi
-fi
-
-AskQuestion "Do you want to install Yarn" "Installing Yarn"
-if [[ "$?" == 1 ]]; then
-  brew install yarn
-fi
-
-AskQuestion "Do you want to install Terminal Fonts"
-if [[ "$?" == 1 ]]; then
-  echo "brew tap homebrew/cask-fonts"
-  brew update --force --verbose
-  brew tap homebrew/cask-fonts
-  echo "Installing font Meslo..."
-  brew install --cask font-meslo-lg
-  brew install --cask font-meslo-for-powerline
-  echo "Installing font Hack-Nerd..."
-  brew install --cask font-hack-nerd-font
-  echo "Installing font Fira-Code..."
-  brew install --cask font-fira-code-nerd-font
-  brew install --cask font-fira-code
 fi
 
 echo -e "\n\n${GREEN}All Done!${NC}\n\n"
