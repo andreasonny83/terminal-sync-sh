@@ -90,13 +90,13 @@ if [[ "$?" == 1 ]]; then
   brew update --force --verbose
   brew tap homebrew/cask-fonts
   echo "Installing font Meslo..."
-  brew cask install font-meslo-lg
-  brew cask install font-meslo-for-powerline
+  brew install --cask font-meslo-lg
+  brew install --cask font-meslo-for-powerline
   echo "Installing font Hack-Nerd..."
-  brew cask install font-hack-nerd-font
+  brew install --cask font-hack-nerd-font
   echo "Installing font Fira-Code..."
-  brew cask install font-fira-code-nerd-font
-  brew cask install font-fira-code
+  brew install --cask font-fira-code-nerd-font
+  brew install --cask font-fira-code
 fi
 
 echo -e "\n\n${GREEN}All Done!${NC}\n\n"
