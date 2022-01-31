@@ -62,7 +62,7 @@ fi
 
 AskQuestion "Do you want to install npmrc-cli" "Installing npmrc-cli"
 if [[ "$?" == 1 ]]; then
-  yarn global add npmrc-cli
+  yarn global add npmrc
 fi
 
 AskQuestion "Do you want to install Terminal Fonts"
