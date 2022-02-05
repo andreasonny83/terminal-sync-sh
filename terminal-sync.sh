@@ -65,6 +65,11 @@ if [[ "$?" == 1 ]]; then
   yarn global add npmrc
 fi
 
+AskQuestion "Do you want to install ngrok" "Installing ngrok"
+if [[ "$?" == 1 ]]; then
+  brew install ngrok/ngrok/ngrok
+fi
+
 AskQuestion "Do you want to install Terminal Fonts"
 if [[ "$?" == 1 ]]; then
   echo "brew tap homebrew/cask-fonts"
