@@ -87,7 +87,7 @@ fi
 
 AskQuestion "Do you want to install iTerm2 (This requires Homebrew to be installed)" "Installing iTerm2"
 if [[ "$?" == 1 ]]; then
-  brew cask install iterm2
+  brew install --cask iterm2
 fi
 
 AskQuestion "Do you want to download your custom iTerm2 configuration"
