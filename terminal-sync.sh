@@ -55,6 +55,11 @@ if [[ "$?" == 1 ]]; then
   brew install yarn
 fi
 
+AskQuestion "Do you want to install PNPM" "Installing PNPM"
+if [[ "$?" == 1 ]]; then
+  brew install pnpm
+fi
+
 AskQuestion "Do you want to install NVM" "Installing NVM"
 if [[ "$?" == 1 ]]; then
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
